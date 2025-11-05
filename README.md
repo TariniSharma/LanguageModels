@@ -9,8 +9,6 @@ Input and positional embeddings are learned through an nn.Embedding layer. </br>
 Training curve: </br>
 <img width="500" height="550" alt="image" src="https://github.com/user-attachments/assets/d264d6f2-d4f8-4bce-90de-43d7f3097845" />
 
-
-
 ## Error Analysis of Regularization Methods
 For regularization, each sublayer is encapsulated in a residual block with Layer Normalization and we employ dropout. Early stopping and label smoothing was also added. </br>
 
