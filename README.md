@@ -3,10 +3,12 @@ This repo contains the Pytorch implementation of a transformer decoder and is tr
 The notebook takes about 25 minutes to run on a GPU P100 processor.
 
 ## Technical Details
-As in the transformers paper by Vishwani et all, the decoder is composed of N=6 layers, each having 2 sublayers - Multi Headed Masked Self Attention & Position Wise FeedForward Network.
-Cross entropy loss is utilized along with Adam optimizer with learning rate of 3e-4
-For regularization, each sublayer is encapsulated in a residual block with Layer Normalization and we employ dropout with dropout ratio as 0.2. Early stopping and label smoothing was also added.
-Input and positional embeddings are learned through an nn.Embedding layer.
+As in the transformers paper by Vishwani et all, the decoder is composed of N=6 layers, each having 2 sublayers - Multi Headed Masked Self Attention & Position Wise FeedForward Network. </br>
+Cross entropy loss is utilized along with Adam optimizer with learning rate of 3e-4 </br>
+Input and positional embeddings are learned through an nn.Embedding layer. </br>
+
+## Error Analysis of Regularization Methods
+For regularization, each sublayer is encapsulated in a residual block with Layer Normalization and we employ dropout. Early stopping and label smoothing was also added. </br>
 
 | Regularization | Training Loss | Validation Loss | Variance | %Bias Increment | %Variance Drop
 | --- | --- | --- | --- | --- | --- |
@@ -15,3 +17,7 @@ Input and positional embeddings are learned through an nn.Embedding layer.
 | Dropout ratio = 0.2 + Early Stopping | 1.11 | 1.51 | 0.4 | 22% | 43% |
 | Dropout ratio = 0.2 + Early Stopping + Label Smoothing = 0.05 | 1.4 | 1.78 | 0.38 | 54% | 45% |
 | Dropout ratio = 0.2 + Early Stopping + Label Smoothing = 0.1 | 1.68 | 2 | 0.32 | 85% | 54% |
+
+The bias-variance tradeoff seems pretty evident from the comparison above. The most reliable method to improve upon variance without effecting bias is to add more training data.
+</br>
+% Bias Increment and % Variance Drop measure the increment and decrement of training loss and variance in each successive regularization method, keeping the 1st method as baseline. Keeping the tradeoff in mind, I drop label smoothing because it hurts bias more than improving variance.
