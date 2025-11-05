@@ -21,3 +21,9 @@ For regularization, each sublayer is encapsulated in a residual block with Layer
 The bias-variance tradeoff seems pretty evident from the comparison above. The most reliable method to improve upon variance without effecting bias is to add more training data.
 </br>
 % Bias Increment and % Variance Drop measure the increment and decrement of training loss and variance in each successive regularization method, keeping the 1st method as baseline. Keeping the tradeoff in mind, I drop label smoothing because it hurts bias more than improving variance.
+
+## Generating Shakespeare!
+The model was able to understand the structure of Shakespeare texts which composes of a speaker followed by the dialogue. Although the text does not seem to make much sense, which can be expected since we are modelling at the character level, the grammatics, and text structure was learnt well by the model.
+Sample generation:
+<img width="1413" height="1638" alt="image" src="https://github.com/user-attachments/assets/f3dea625-b859-4285-bb91-7a386ea5f452" />
+
