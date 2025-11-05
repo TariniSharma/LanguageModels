@@ -1,9 +1,10 @@
 ## What's In It
-This repo contains the Pytorch implementation of a transformer decoder and is trained as a character level LLM on Shakespeare's collected works.
-The notebook takes about 25 minutes to run on a GPU P100 processor.
+This repo contains Pytorch implementation of 2 character level language models - a baseline bigram model and a transformer decoder which are both trained using language modelling objective on Shakespeare's collected works.
+The transfomer decoder notebook takes about 20 minutes to run on a GPU P100 processor.
 
 ## Technical Details
-As in the transformers paper by Vishwani et all, the decoder is composed of N=6 layers, each having 2 sublayers - Multi Headed Masked Self Attention & Position Wise FeedForward Network. </br>
+The Bigram model acts as a baseline model and it consists of a single Embedding layer and utilizes cross entropy loss between predicted next token and ground truth. </br>
+As in the [Attention Is All You Need paper](https://arxiv.org/pdf/1706.03762), the decoder is composed of N=6 layers, each having 2 sublayers - Multi Headed Masked Self Attention & Position Wise FeedForward Network. </br>
 Cross entropy loss is utilized along with Adam optimizer with learning rate of 3e-4 </br>
 Input and positional embeddings are learned through an nn.Embedding layer. </br>
 Training curve: </br>
