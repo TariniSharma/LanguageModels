@@ -4,6 +4,7 @@ The notebook takes about 25 minutes to run on a GPU P100 processor.
 
 ## Technical Details
 As in the transformers paper by Vishwani et all, the decoder is composed of N=6 layers, each having 2 sublayers - Multi Headed Masked Self Attention & Position Wise FeedForward Network.
+Cross entropy loss is utilized along with Adam optimizer with learning rate of 3e-4
 For regularization, each sublayer is encapsulated in a residual block with Layer Normalization and we employ dropout with dropout ratio as 0.2. Early stopping and label smoothing was also added.
 Input and positional embeddings are learned through an nn.Embedding layer.
 
