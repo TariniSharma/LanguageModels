@@ -6,6 +6,9 @@ The notebook takes about 25 minutes to run on a GPU P100 processor.
 As in the transformers paper by Vishwani et all, the decoder is composed of N=6 layers, each having 2 sublayers - Multi Headed Masked Self Attention & Position Wise FeedForward Network. </br>
 Cross entropy loss is utilized along with Adam optimizer with learning rate of 3e-4 </br>
 Input and positional embeddings are learned through an nn.Embedding layer. </br>
+Training curve: </br>
+<img width="567" height="433" alt="Training Curve" src="https://github.com/user-attachments/assets/0f9537e8-d2cc-495a-8095-ccfd6a3ecea8" />
+
 
 ## Error Analysis of Regularization Methods
 For regularization, each sublayer is encapsulated in a residual block with Layer Normalization and we employ dropout. Early stopping and label smoothing was also added. </br>
@@ -24,6 +27,6 @@ The bias-variance tradeoff seems pretty evident from the comparison above. The m
 
 ## Generating Shakespeare!
 The model was able to understand the structure of Shakespeare texts which composes of a speaker followed by the dialogue. Although the text does not seem to make much sense, which can be expected since we are modelling at the character level, the grammatics, and text structure was learnt well by the model.
-Sample generation:
+Sample generation: </br>
 <img width="400" height="450" alt="Shakespeare text generation" src="https://github.com/user-attachments/assets/f3dea625-b859-4285-bb91-7a386ea5f452" />
 
