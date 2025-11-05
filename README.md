@@ -25,5 +25,5 @@ The bias-variance tradeoff seems pretty evident from the comparison above. The m
 ## Generating Shakespeare!
 The model was able to understand the structure of Shakespeare texts which composes of a speaker followed by the dialogue. Although the text does not seem to make much sense, which can be expected since we are modelling at the character level, the grammatics, and text structure was learnt well by the model.
 Sample generation:
-<img width="350" height="400" alt="Shakespeare text generation" src="https://github.com/user-attachments/assets/f3dea625-b859-4285-bb91-7a386ea5f452" />
+<img width="400" height="450" alt="Shakespeare text generation" src="https://github.com/user-attachments/assets/f3dea625-b859-4285-bb91-7a386ea5f452" />
 
