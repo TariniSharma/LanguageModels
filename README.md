@@ -7,7 +7,7 @@ As in the transformers paper by Vishwani et all, the decoder is composed of N=6 
 Cross entropy loss is utilized along with Adam optimizer with learning rate of 3e-4 </br>
 Input and positional embeddings are learned through an nn.Embedding layer. </br>
 Training curve: </br>
-<img width="567" height="606" alt="image" src="https://github.com/user-attachments/assets/d264d6f2-d4f8-4bce-90de-43d7f3097845" />
+<img width="500" height="550" alt="image" src="https://github.com/user-attachments/assets/d264d6f2-d4f8-4bce-90de-43d7f3097845" />
 
 
 
